@@ -16,7 +16,7 @@ header {
 #bg {
   grid-area: left;
   background: url('/assets/home-bg-img.svg') no-repeat top/contain;
-  background-position-x: -10rem;
+   background-position-x: -10rem; /* posicionar imagem dentro da div. Nao gera overflow */
 }
 main {
   grid-area: right;
@@ -45,4 +45,46 @@ input {
 input, button, .button {
   width: 100%;
   margin-bottom: 1.8rem;
+}
+/* Separator line */
+.separator {
+  display: flex;
+  align-items: center;
+  margin: 4rem 0;
+}
+.separator div:nth-child(2) {
+  color: var(--grey-blue);
+  font-family: 'Poppins';
+  font-weight: 400;
+  padding: 0 1.34rem;
+  line-height: 0;
+}
+.separator div:nth-child(1),
+.separator div:nth-child(3) { /*indica qual div filha dessa classe estarei fazendo modificacoes (pela sequencia) */
+  background: var(--grey-blue);
+  width: 100%;
+  height: .1rem; 
+}
+/* creating balls */
+.ball {
+  width: 21.2rem;
+  height: 21.2rem;
+  background: var(--blue);
+  position: fixed;
+  clip-path: circle();
+  opacity: 0.1;
+}
+
+.ball.top {
+  width: 63.3rem;
+  height: 63.3rem;
+  
+  right: -35rem;
+  top: -46rem;
+
+}
+
+.ball.bottom {
+  right: 5.6rem;
+  bottom: -15rem;
 }
