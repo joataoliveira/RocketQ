@@ -1,5 +1,5 @@
 .content {
-  max-width: 90%;
+   max-width: min(112rem, 90%); /* esta funcao retornara quem for menor */
 }
 #room header {
   width: 100%;
@@ -42,6 +42,7 @@
   border: .2rem solid var(--grey-blue);
   padding: 1.6rem;
   border-radius: 0 .8rem .8rem .8rem;
+  margin-bottom: 1.6rem;
 }
 
 #question-form textarea {
@@ -77,6 +78,55 @@ margin-right: .9rem;
   line-height: 2.4rem;
 }
 
+/* Questions */
 
+.question-wrapper {
+  background: var(--light-blue);
+  margin-bottom: .8rem;
+  border-radius: 0 .8rem .8rem .8rem;
+  padding: 2.4rem;
+}
 
+.question-wrapper .question-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.question-wrapper .question-content .user{
+  clip-path: circle();
+  background-color: var(--blue);
+  padding: 1.4rem;
+}
+
+.question-wrapper .question-content p{
+  display: flex;
+  margin-left: 1.6rem;
+  word-break: break-word;
+  align-items: center;
+  min-height: 5.2rem;
+}
+
+.question-wrapper .actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.question-wrapper .actions > a{
+  display: flex;
+  align-items: center;
+}
+.question-wrapper .actions > a > img{
+  margin-right: .8rem;
+}
+.question-wrapper .actions > a + a{ /*pegando o elemento irmao de a dentro da div actions. poderia ser sustituido por > a:nth-child(2)*/
+  margin-left: 2.4rem;
+}
+/* Question read */
+.question-wrapper.read {
+  background: var(--grey);
+}
+.question-wrapper .question-content .user.read {
+  background-color: var(--grey-blue);
+}
 
